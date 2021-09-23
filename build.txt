@@ -1,0 +1,8 @@
+author = Yogu
+version = 0.1
+displayName = Yogu's Content Mod
+hideCode = false
+hideResources = false
+includeSource = true
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+includePDB = true
