@@ -9,7 +9,7 @@ namespace YoguContentMod
         {
             if (npc.townNPC)
             {
-                Item.NewItem(npc().GetRect(), ModContent.ItemType<Skin>(), Main.rand.Next(3, 7));
+                Item.NewItem(npc.GetRect(), ModContent.ItemType<Skin>(), Main.rand.Next(3, 7));
             }
         }
     }
