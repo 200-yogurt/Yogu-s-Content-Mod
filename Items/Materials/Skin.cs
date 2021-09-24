@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,7 +13,8 @@ namespace YoguContentMod.Items.Materials
         }
         public override void SetDefaults()
         {
-            Items.material = true;
+            item.material = true;
+            item.rare = 1;
         }
     }
 }
