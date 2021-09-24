@@ -15,6 +15,7 @@ namespace YoguContentMod.Items.Materials
         {
             item.material = true;
             item.rare = 1;
+            item.maxStack = 9999;
         }
     }
 }
