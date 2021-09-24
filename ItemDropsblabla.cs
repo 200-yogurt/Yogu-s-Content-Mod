@@ -1,15 +1,17 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using YoguContentMod.Items.Materials;
 
 namespace YoguContentMod
 {
-    public class NPCLoot : GlobalNPC
+    public class DropsGlobalNPC : GlobalNPC
     {
-        public override void NPCLoot()
+        public override void NPCLoot(NPC npc)
         {
             if (npc.townNPC)
             {
-                Item.NewItem(npc.GetRect(), ModContent.ItemType<Skin>(), Main.rand.Next(3, 7));
+                Item.NewItem(npc.getRect(), ModContent.ItemType<Skin>(), Main.rand.Next(3, 7));
             }
         }
     }
