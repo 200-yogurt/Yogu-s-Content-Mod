@@ -1,5 +1,7 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using YoguContentMod.Items.Materials;
 
 namespace YoguContentMod.Items.Weapons.Melee
 {
@@ -20,7 +22,7 @@ namespace YoguContentMod.Items.Weapons.Melee
 			item.useAnimation = 15;
 			item.useStyle = 13;
 			item.knockBack = 3;
-			item.sellPrice(copper: 69);
+			item.value = Item.sellPrice(copper: 69);
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
@@ -29,7 +31,8 @@ namespace YoguContentMod.Items.Weapons.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DirtBlock, 10);
+			recipe.AddIngredient(ModContent.ItemType<Skin>(), 30);
+			recipe.AddIngredient(ItemID.Wood, 10);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
