@@ -20,7 +20,7 @@ namespace YoguContentMod.Items.Weapons.Melee
 			item.useAnimation = 15;
 			item.useStyle = 13;
 			item.knockBack = 3;
-			item.value = 000, 000, 000, 069;
+			item.sellPrice(copper: 69);
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
