@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace YoguContentMod
 {
-    public class SDFEDEFR : GlobalNPC
+    public class NPCLoot : GlobalNPC
     {
         public override void NPCLoot()
         {
