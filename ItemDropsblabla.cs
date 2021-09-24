@@ -1,5 +1,5 @@
 using Terraria.ID;
-using Terraria.TmodLoader;
+using Terraria.ModLoader;
 
 namespace YoguContentMod
 {
