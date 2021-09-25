@@ -33,7 +33,7 @@ namespace YoguContentMod.Items.Weapons.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Skin>(), 30);
 			recipe.AddIngredient(ItemID.Wood, 10);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddTile(TileID.Loom);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
