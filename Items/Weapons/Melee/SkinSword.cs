@@ -14,7 +14,7 @@ namespace YoguContentMod.Items.Weapons.Melee
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 10;
+			item.damage = 5;
 			item.melee = true;
 			item.width = 30;
 			item.height = 30;
@@ -31,8 +31,8 @@ namespace YoguContentMod.Items.Weapons.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Skin>(), 30);
-			recipe.AddIngredient(ItemID.Wood, 10);
+			recipe.AddIngredient(ModContent.ItemType<Skin>(), 18);
+			recipe.AddRecipeGroup(RecipeGroupID.Wood, 10)
 			recipe.AddTile(TileID.Loom);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
