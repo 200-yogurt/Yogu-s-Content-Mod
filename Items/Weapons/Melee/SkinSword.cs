@@ -5,12 +5,12 @@ using YoguContentMod.Items.Materials;
 
 namespace YoguContentMod.Items.Weapons.Melee
 {
-	public class TheSkinSword : ModItem
+	public class SkinSword : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Skin Sword");
-			Tooltip.SetDefault("This is a skin made weapon, not very useful but kinda stinky");
+			DisplayName.SetDefault("Skin Sword");
+			Tooltip.SetDefault("This is a skin made weapon, not very useful but kinda cursed");
 		}
 		public override void SetDefaults()
 		{
