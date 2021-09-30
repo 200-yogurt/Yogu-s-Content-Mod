@@ -9,7 +9,7 @@ namespace YoguContentMod.Items.Materials
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Skin");
-            Tooltip.SetDefault("An object dropped by those unfortunate \n Used to make useless stuff and very cursed stuff");
+            Tooltip.SetDefault("An object dropped by those unfortunate \nUsed to make useless stuff and very cursed stuff");
         }
         public override void SetDefaults()
         {
