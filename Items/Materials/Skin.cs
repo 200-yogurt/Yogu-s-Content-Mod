@@ -14,7 +14,7 @@ namespace YoguContentMod.Items.Materials
         public override void SetDefaults()
         {
             item.material = true;
-            item.rare = 1;
+            item.rare = ItemRarityID.Blue;
             item.maxStack = 9999;
         }
     }
