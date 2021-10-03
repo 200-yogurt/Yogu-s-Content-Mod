@@ -1,17 +1,21 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using YoguContentMod.Items.Materials;
+using YoguContentMod.Projectiles.Hostile;
 
 namespace YoguContentMod.Items.Weapons.Melee
 {
-	public class SkinSword : ModItem
+	public class SkinSword : YItem
 	{
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Skin Sword");
 			Tooltip.SetDefault("This is a skin made weapon, not very useful but kinda cursed");
 		}
+
 		public override void SetDefaults()
 		{
 			item.damage = 5;
@@ -26,16 +30,22 @@ namespace YoguContentMod.Items.Weapons.Melee
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
+
 		}
 
-		public override void AddRecipes()
+        public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			CreateRecipe()
+			.AddIngredient<Skin>(18)
+			.AddRecipeGroup(RecipeGroupID.Wood, 10)
+			.AddTile(TileID.Loom)
+			.Register();
+			/*ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Skin>(), 18);
 			recipe.AddRecipeGroup(RecipeGroupID.Wood, 10);
 			recipe.AddTile(TileID.Loom);
 			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.AddRecipe();*/
 		}
 	}
 }

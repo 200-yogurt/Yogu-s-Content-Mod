@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace YoguContentMod.Items.Materials
 {
-    public class Skin : ModItem
+    public class Skin : YItem
     {
         public override void SetStaticDefaults()
         {
@@ -13,9 +13,10 @@ namespace YoguContentMod.Items.Materials
         }
         public override void SetDefaults()
         {
+            base.SetDefaults();
             item.material = true;
             item.rare = ItemRarityID.Blue;
-            item.maxStack = 9999;
+            item.maxStack = 999;
         }
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
 {
-    public class StagnantAbomination : ModNPC
+    public class StagnantAbomination : YNPC
     {
         public override void SetStaticDefaults()
         {

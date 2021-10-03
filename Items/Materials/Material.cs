@@ -8,9 +8,9 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace YoguContentMod.Projectiles.Hostile
+namespace YoguContentMod.Items.Materials
 {
-    public class YogurtBall : YProjectile
+    public abstract class Material : YItem
     {
         public override void SetStaticDefaults()
         {
@@ -20,11 +20,8 @@ namespace YoguContentMod.Projectiles.Hostile
         public override void SetDefaults()
         {
             base.SetDefaults();
-        }
-
-        public override void AI()
-        {
-            base.AI();
+            item.material = true;
+            item.maxStack = 999;
         }
     }
 }

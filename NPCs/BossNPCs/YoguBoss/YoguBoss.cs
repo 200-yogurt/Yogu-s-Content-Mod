@@ -5,10 +5,11 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using YoguContentMod.NPCs.HostileNPCs;
+using YoguContentMod.Items.Materials.KingYoqurt;
 
 namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
 {
-    public class YoguBoss : ModNPC, IFallThroughPlatforms
+    public class YoguBoss : YNPC, IFallThroughPlatforms
     {
         public override void SetStaticDefaults()
         {
@@ -16,7 +17,7 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             Main.npcFrameCount[npc.type] = 8;
         }
 
-        public override void SetDefaults() // VS c bugio
+        public override void SetDefaults() 
         {
             npc.lifeMax = 3_900;
             npc.width = 130;
@@ -24,16 +25,36 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             npc.damage = 31;
             npc.defense = 11;
             npc.boss = true;
-            npc.aiStyle = -1;  // 
+            npc.aiStyle = -1;  
             npc.noGravity = false;
             npc.knockBackResist = 0f;
         }
 
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-        { // a
-            npc.lifeMax = 6_780; // 
+        {
+            npc.lifeMax = 6_780; 
             npc.damage = 62;
             npc.defense = 22;
+        }
+
+        public override void NPCLoot()
+        {
+            // loot
+            Rectangle rect = npc.getRect();
+            Item.NewItem(rect, ModContent.ItemType<MechanicShard>(), Main.rand.Next(3, 7));
+            base.NPCLoot();
+        }
+
+        public override bool PreNPCLoot()
+        {
+            if (IsFirst)
+            {
+                //NPC.NewNPC((int)(npc.Center.X), (int)(npc.Center.Y), ModContent.NPCType<StagnantAbomination>(), Target: npc.target);
+                Helpers.SpawnNPC<StagnantAbomination>(npc.Center, Target: npc.target);
+
+                return false;
+            }
+            return base.PreNPCLoot();
         }
 
         const int StateSlot = 0;
@@ -54,9 +75,10 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
                 npc.velocity.X *= 0.8f;
 
             npc.TargetClosest(true);
+
             if (State == AIState.NPCJumping)
             {
-                if (jumpCount < MaxJumpsUntilLaser) // caca
+                if (jumpCount < MaxJumpsUntilLaser)
                 {
                     if (npc.collideY) // 
                     {
@@ -132,21 +154,7 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             }
         }
 
-        public override void NPCLoot()
-        {
-            base.NPCLoot();
-        }
 
-        public override bool PreNPCLoot()
-        {
-            if (IsFirst)
-            {
-                NPC.NewNPC((int)(npc.Center.X), (int)(npc.Center.Y), ModContent.NPCType<StagnantAbomination>(), Target: npc.target);
-
-                return false;
-            }
-            return base.PreNPCLoot(); 
-        }
 
         int RandomProjectileShootingTime => 180;
 
@@ -199,14 +207,6 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
         }
 
         bool IFallThroughPlatforms.CanFall => (Target.Bottom.Y - 16) > (npc.Bottom.Y);
-        /*{
-            get
-            {
-                bool n = ;
-                Main.NewText(n);
-                return n;
-            }
-        }*/
 
         int jumpCount;
 

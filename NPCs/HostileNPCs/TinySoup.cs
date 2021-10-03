@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 
 namespace YoguContentMod.NPCs.HostileNPCs
 {
-    public class TinySoup : ModNPC
+    public class TinySoup : YNPC
     {
         public override void SetStaticDefaults() 
         {
