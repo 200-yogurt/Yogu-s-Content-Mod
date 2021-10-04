@@ -57,10 +57,10 @@ namespace YoguContentMod
                 //"AddBoss",
                 bossChecklistMod: bossChecklist,
                 priority: 1.55f,
-                npctype: ModContent.NPCType<YoguBoss>(), // listo xd
+                npctype: ModContent.NPCType<YoguBoss>(), 
                 mod: this,
                 name: "King Yoqurt",
-                defeated: (Func<bool>)(() => DownedNPCsModWorld.DownedYoguBoss), // [i:itemtype]
+                defeated: (Func<bool>)(() => DownedNPCsModWorld.DownedYoguBoss), 
                 summonItem: ModContent.ItemType<LethargicAutomation>(),
                 list: new List<int> { },
                 loot: new List<int> { ModContent.ItemType<StickySword>(), ModContent.ItemType<StagnantBow>(), ModContent.ItemType<DrippyGun>(), ModContent.ItemType<SluggishStaff>(), ModContent.ItemType<OrdinaryDrink>(), ModContent.ItemType<MechanicShard>(), ModContent.ItemType<Yogurt>() }, // BossCheckList adds a book were you can see the bosses drops, items, summon and hot it went to the player meanwhile on fight, so these objects appear on the drops

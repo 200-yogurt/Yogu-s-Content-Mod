@@ -15,16 +15,32 @@ namespace YoguContentMod.Projectiles.Hostile
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
+            Main.projFrames[projectile.type] = 5;
         }
 
         public override void SetDefaults()
         {
             base.SetDefaults();
+            projectile.friendly = true;
+            projectile.hostile = false;
+            projectile.melee = true;
+            projectile.width = 52;
+            projectile.height = 38;
         }
 
         public override void AI()
         {
             base.AI();
+            projectile.rotation = projectile.velocity.ToRotation();
+
+            if(projectile.frameCounter++ > 5)
+            {
+                projectile.frameCounter = 0;
+                if(projectile.frame++ >= 4)
+                {
+                    projectile.frame = 0;
+                }
+            }
         }
     }
 }

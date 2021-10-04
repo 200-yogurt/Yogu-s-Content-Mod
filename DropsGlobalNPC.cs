@@ -7,7 +7,7 @@ namespace YoguContentMod
 {
     public class DropsGlobalNPC : GlobalNPC
     {
-        public override void NPCLoot(NPC npc)
+        public override void NPCLoot(NPC npc) 
         {
             if (npc.townNPC)
             {

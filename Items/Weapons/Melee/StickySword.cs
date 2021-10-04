@@ -23,7 +23,7 @@ namespace YoguContentMod.Items.Weapons.Melee
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.damage = 5;
+            item.damage = 28;
             item.melee = true;
             item.width = 42;
             item.height = 42;
@@ -31,8 +31,8 @@ namespace YoguContentMod.Items.Weapons.Melee
             item.useAnimation = 28;
             item.useStyle = 1;
             item.knockBack = 5;
-            item.value = Item.sellPrice(copper: 69);
-            item.rare = ItemRarityID.Green;
+            item.value = Item.sellPrice(silver: 20);
+            item.rare = ItemRarityID.Orange;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
 
@@ -49,9 +49,10 @@ namespace YoguContentMod.Items.Weapons.Melee
                 return false;
 
             float r = MathHelper.PiOver4 / 2;
+            damage = (int)(damage * 24f / item.damage);
             for(int i = 0; i < 3; i++)
             {
-                Vector2 dir = new Vector2(speedX, speedY).RotatedBy((r - 1) * MathHelper.PiOver4 / 2);
+                Vector2 dir = new Vector2(speedX, speedY).RotatedBy((i - 1) * MathHelper.PiOver4);
 
                 Projectile.NewProjectile(position, dir, ModContent.ProjectileType<YogurtBall>(), damage, knockBack, player.whoAmI);
             }
