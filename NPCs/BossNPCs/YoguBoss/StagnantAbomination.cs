@@ -26,8 +26,8 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             npc.lifeMax = 2_670;
             npc.damage = 46;
             npc.defense = 16;
-            npc.width = 46;
-            npc.height = 58;
+            npc.width = 82;
+            npc.height = 62;
             npc.boss = true;
             npc.noGravity = true;
             npc.aiStyle = -1;
@@ -66,7 +66,7 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
         {
             NPCID.Sets.TrailCacheLength[npc.type] = 15;
             NPCID.Sets.TrailingMode[npc.type] = 3;
-            // este es el que hace dashes? sis la bola que hace dashes
+
             npc.TargetClosest(true);
             npc.velocity *= 0.9f;
 
@@ -238,7 +238,6 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             PostDash,
             RandomProjectileSpam,
             PostRandomProjectileSpam
-            // como va
         }
 
         void Dash()

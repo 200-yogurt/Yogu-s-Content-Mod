@@ -13,6 +13,8 @@ namespace YoguContentMod.Items.BossSummons
     {
         public abstract int SummonNPCType { get; }
 
+        public override bool OnlyShootOnSwing => base.OnlyShootOnSwing;
+
         public override void SetStaticDefaults()
         {
             ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
@@ -38,7 +40,7 @@ namespace YoguContentMod.Items.BossSummons
         {
             NPC.SpawnOnPlayer(player.whoAmI, SummonNPCType);
 
-            return base.UseItem(player);
+            return true;
         }
     }
 

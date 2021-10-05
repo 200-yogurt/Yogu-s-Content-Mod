@@ -175,10 +175,10 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             get
             {
                 /*
-                 * 100% - 81%: 8 saltos
-                 *  80% - 61%: 7 saltos
-                 *  60% - 41%: 5 saltos
-                 *  40% - 15%: 4 saltos
+                 * 100% - 81%: 8 jumps
+                 *  80% - 61%: 7 jumps
+                 *  60% - 41%: 5 jumps
+                 *  40% - 15%: 4 jumps
                  *  15% - 1%: 3
                  */
 

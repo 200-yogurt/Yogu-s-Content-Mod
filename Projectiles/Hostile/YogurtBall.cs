@@ -33,7 +33,7 @@ namespace YoguContentMod.Projectiles.Hostile
             base.AI();
             projectile.rotation = projectile.velocity.ToRotation();
 
-            if(projectile.frameCounter++ > 5)
+            if(projectile.frameCounter++ > 3)
             {
                 projectile.frameCounter = 0;
                 if(projectile.frame++ >= 4)

@@ -12,8 +12,8 @@ namespace YoguContentMod
 {
     public static class Helpers
     {
-        public static event Action OnLoad;
-        public static event Action OnUnload;
+        //public static event Action OnLoad;
+        //public static event Action OnUnload;
 
         public static int SpawnNPC<TModNPC>(Vector2 coords, int Start = 0, float ai0 = 0f, float ai1 = 0f, float ai2 = 0f, float ai3 = 0f, int Target = 255) where TModNPC : ModNPC
         {

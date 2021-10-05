@@ -48,13 +48,13 @@ namespace YoguContentMod.Items.Weapons.Melee
             if (Main.rand.Next(5) > 0)
                 return false;
 
-            float r = MathHelper.PiOver4 / 2;
+            float r = MathHelper.PiOver4 / 16;
             damage = (int)(damage * 24f / item.damage);
-            for(int i = 0; i < 3; i++)
+            for(int i = -1; i <= 1; i++)
             {
-                Vector2 dir = new Vector2(speedX, speedY).RotatedBy((i - 1) * MathHelper.PiOver4);
+                Vector2 dir = new Vector2(speedX, speedY).RotatedBy(i * r);
 
-                Projectile.NewProjectile(position, dir, ModContent.ProjectileType<YogurtBall>(), damage, knockBack, player.whoAmI);
+                Projectile.NewProjectile(position, dir, type, damage, knockBack, player.whoAmI);
             }
 
             return false;
