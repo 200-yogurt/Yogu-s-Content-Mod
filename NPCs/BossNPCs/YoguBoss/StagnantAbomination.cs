@@ -24,8 +24,8 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
         {
             base.SetDefaults();
             npc.lifeMax = 2_670;
-            npc.damage = 46;
-            npc.defense = 16;
+            npc.damage = 82;
+            npc.defense = 62;
             npc.width = 82;
             npc.height = 62;
             npc.boss = true;
