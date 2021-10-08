@@ -54,6 +54,10 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
 
                 return false;
             }
+            else
+            {
+                (Parent.modNPC as StagnantAbomination).OnDownSpawned();
+            }
             return base.PreNPCLoot();
         }
 
@@ -67,6 +71,7 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
         ref float SecondaryTimer => ref npc.ai[SecondaryTimerSlot]; //{ get => npc.ai[SecondaryTimerSlot]; set => npc.ai[SecondaryTimerSlot] = value; }
         bool IsFirst { get => npc.ai[3] == 0; }
         Player Target { get => Main.player[npc.target]; }
+        NPC Parent => npc.ai[3] > 0 ? Main.npc[(int)npc.ai[3] - 1] : null;
 
 
         public override void AI()
@@ -159,13 +164,48 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
         int RandomProjectileShootingTime => 180;
 
         int laserPhaseCount;
-        float SecondLaserPhaseWaitTime => 5; // 
+        float SecondLaserPhaseWaitTime
+        {
+            get
+            {
+                float n = npc.life / (float)npc.lifeMax;
+                return Math.Max(3 * n + 2, 1);
+            }
+        } 
         float SecondTimerPhaseTime => 60; // time for the second phase of pure random shoots
-        float LaserWaitTime => 48; // time between each laser shot
+        float LaserWaitTime
+        {
+            get
+            {
+                float n = npc.life / (float)npc.lifeMax;
+
+                return Math.Max(48 * n, 20);
+            }
+        }// time between each laser shot
 
 
-        float LaserShootCount => 4; // total time shooting lasers
-        float LaserChargeTime => 48;  // 
+        float LaserShootCount
+        {
+            get
+            {
+                float n = npc.life / (float)npc.lifeMax;
+
+                if(n <= 0.4f)
+                {
+                    return 6;
+                }
+                return 4;
+            }
+        }// total time shooting lasers
+        float LaserChargeTime
+        {
+            get
+            {
+                float n = npc.life / (float)npc.lifeMax;
+
+                return Math.Max(48 * n, 10);
+            }
+        }
 
         int TimePostJumpWait => 80;
         int TimePerJump => 40;
@@ -230,7 +270,7 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
         {
             npc.TargetClosest(true);
             Vector2 toPlayer = Target.MountedCenter - npc.Center;
-            npc.velocity.Y = -10; // movement to up 
+            npc.velocity.Y = -Main.rand.NextFloat(8, MathHelper.Clamp((npc.Center.Y - Target.Center.Y) * 0.05f, 12, 25)); // movement to up 
             npc.velocity.X = 4 * Math.Sign(toPlayer.X); // horizontal (x) movement
         }
 

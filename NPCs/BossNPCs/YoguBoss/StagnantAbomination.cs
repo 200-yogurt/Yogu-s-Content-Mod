@@ -61,7 +61,16 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
         int PostRandomProjectileSpamWaitTime => 10;
 
         float n;
+        float n2;
+        float n3;
         float R { get => n; set => n = value; }
+        float R2 { get => n2; set => n2 = value; }
+        float R3 { get => n3; set => n3 = value; }
+        public void OnDownSpawned()
+        {
+            npc.dontTakeDamage = false;
+            npc.ai[3] = 2;
+        }
         public override void AI()
         {
             NPCID.Sets.TrailCacheLength[npc.type] = 15;
@@ -122,21 +131,24 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
                         if (Timer < RandomProjectileSpamTime)
                         {
 
-                            bool k = (npc.ai[2] * 279.257298f) % 2 < 1;
-                            npc.ai[2] += 14.217489f;
-                            npc.ai[2] *= 418.278931f;
+                            bool k = (R3 = ((R3 + 54.12412f) % 2)) < 1; //(R2 * 42.2298f) % 2 < 1;
+                            
+                            npc.ai[2] += 14.219f;
+                            npc.ai[2] *= 28.231f;
                             npc.ai[2] %= 1;
                             int r = (int)(npc.ai[2] * 4) + 1;
-                            Vector2 n = new Vector2(10, 0).RotatedBy(MathHelper.PiOver2 * r + (k ? MathHelper.PiOver4 : 0)).RotatedByRandom(MathHelper.PiOver4 / 4);
+                            Vector2 n = new Vector2(10, 0).RotatedBy(MathHelper.PiOver2 * r + (k ? MathHelper.PiOver4 : 0)).RotatedByRandom(MathHelper.PiOver4);
+                            // .RotatedBy(MathHelper.PiOver2 * r + (k ? MathHelper.PiOver4 : 0)).RotatedBy(0); 
                             Projectile.NewProjectile(npc.Center, n, ProjectileID.EyeLaser, 10, 0, Main.myPlayer);
-
                             Timer++;
                         }
                         else
                         {
                             Timer = 0;
                             npc.ai[2] = 0;
-                            State = AIState.PostRandomProjectileSpam;
+                            R2 += 11.2523782f;
+                            R2 %= 1f;
+                            //State = AIState.PostRandomProjectileSpam;
                         }
                         break;
                     }
@@ -157,14 +169,17 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
                     }
                 }
             }
-
+            else
+            {
+                npc.dontTakeDamage = true;
+            }
 
             R = Utils.AngleLerp(R, npc.AngleTo(Target.Center), 0.1f);
 
             npc.rotation = R;
-            Main.NewText((npc.rotation + MathHelper.TwoPi) % MathHelper.TwoPi);
+            //Main.NewText((npc.rotation + MathHelper.TwoPi) % MathHelper.TwoPi);
 
-            if((npc.rotation - MathHelper.PiOver2 + MathHelper.TwoPi) % MathHelper.TwoPi > MathHelper.Pi)
+            if ((npc.rotation - MathHelper.PiOver2 + MathHelper.TwoPi) % MathHelper.TwoPi > MathHelper.Pi)
             {
                 //npc.rotation = MathHelper.TwoPi + npc.rotation;
                 npc.spriteDirection = -1;
