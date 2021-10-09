@@ -131,16 +131,12 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
                         if (Timer < RandomProjectileSpamTime)
                         {
 
-                            bool k = (R3 = ((R3 + 54.12412f) % 2)) < 1; //(R2 * 42.2298f) % 2 < 1;
-                            
-                            npc.ai[2] += 14.219f;
-                            npc.ai[2] *= 28.231f;
-                            npc.ai[2] %= 1;
-                            int r = (int)(npc.ai[2] * 4) + 1;
-                            Vector2 n = new Vector2(10, 0).RotatedBy(MathHelper.PiOver2 * r + (k ? MathHelper.PiOver4 : 0)).RotatedByRandom(MathHelper.PiOver4);
+                            bool k = R3 < 1; //(R2 * 42.2298f) % 2 < 1;
+                            Vector2 n = new Vector2(10, 0).RotatedBy(MathHelper.PiOver2 * Main.rand.Next(4) + (k ? MathHelper.PiOver4 : 0)).RotatedByRandom(MathHelper.PiOver4 / 2f);
                             // .RotatedBy(MathHelper.PiOver2 * r + (k ? MathHelper.PiOver4 : 0)).RotatedBy(0); 
                             Projectile.NewProjectile(npc.Center, n, ProjectileID.EyeLaser, 10, 0, Main.myPlayer);
                             Timer++;
+                            Main.NewText(R3);
                         }
                         else
                         {
@@ -148,7 +144,8 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
                             npc.ai[2] = 0;
                             R2 += 11.2523782f;
                             R2 %= 1f;
-                            //State = AIState.PostRandomProjectileSpam;
+                            R3 = ((R3 * 429.7529f) % 2f);
+                            State = AIState.PostRandomProjectileSpam;
                         }
                         break;
                     }
@@ -208,6 +205,8 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             NPC.NewNPC((int)(npc.Center.X), (int)(npc.Center.Y), ModContent.NPCType<YoguBoss>(), 0, ai3: npc.whoAmI + 1, Target: npc.target);
 
         }
+
+
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
         {

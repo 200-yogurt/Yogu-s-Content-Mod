@@ -159,7 +159,19 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
             }
         }
 
-
+        public override void HitEffect(int hitDirection, double damage)
+        {
+            base.HitEffect(hitDirection, damage);
+            if (npc.life <= 0)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    string goreName = "Gores/KingYoqurtGore" + i;
+                    Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot(goreName));
+                }
+                Main.PlaySound(new Terraria.Audio.LegacySoundStyle(2, 14))
+            }
+        }
 
         int RandomProjectileShootingTime => 180;
 
