@@ -169,7 +169,7 @@ namespace YoguContentMod.NPCs.BossNPCs.YoguBoss
                     string goreName = "Gores/KingYoqurtGore" + i;
                     Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot(goreName));
                 }
-                Main.PlaySound(new Terraria.Audio.LegacySoundStyle(2, 14))
+                Main.PlaySound(new Terraria.Audio.LegacySoundStyle(2, 14));
             }
         }
 

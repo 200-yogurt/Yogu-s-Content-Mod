@@ -8,9 +8,9 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace YoguContentMod.Projectiles.Hostile
+namespace YoguContentMod.Projectiles.Friendly
 {
-    public class YogurtBall : YProjectile
+    public class YogurtBallFriendly : YProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -33,10 +33,10 @@ namespace YoguContentMod.Projectiles.Hostile
             base.AI();
             projectile.rotation = projectile.velocity.ToRotation();
 
-            if(projectile.frameCounter++ > 3)
+            if (projectile.frameCounter++ > 3)
             {
                 projectile.frameCounter = 0;
-                if(projectile.frame++ >= 4)
+                if (projectile.frame++ >= 4)
                 {
                     projectile.frame = 0;
                 }
