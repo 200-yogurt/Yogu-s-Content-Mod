@@ -24,12 +24,12 @@ namespace YoguContentMod.Items.Weapons.Ranged
         public override void SetDefaults() 
         {
             base.SetDefaults();
-            item.damage = 24;
+            item.damage = 25;
             item.width = 28;
             item.height = 44;
             item.useTime = 20;
             item.useAnimation = 20;
-            item.crit = 8;
+            item.crit = 4;
             item.shootSpeed = 10;
         }
 

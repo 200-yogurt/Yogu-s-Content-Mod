@@ -32,6 +32,7 @@ namespace YoguContentMod.Items.Weapons.Melee
             item.useAnimation = 28;
             item.useStyle = 1;
             item.knockBack = 5;
+            item.crit = 3;
             item.value = Item.sellPrice(silver: 20);
             item.rare = ItemRarityID.Orange;
             item.UseSound = SoundID.Item1;
