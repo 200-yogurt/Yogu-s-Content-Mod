@@ -30,7 +30,7 @@ namespace YoguContentMod.Items.Weapons.Ranged
             item.useTime = 20;
             item.useAnimation = 20;
             item.crit = 4;
-            item.shootSpeed = 10;
+            item.shootSpeed = 17;
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

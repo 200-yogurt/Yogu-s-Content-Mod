@@ -18,6 +18,7 @@ namespace YoguContentMod
 {
     public class YoguContentMod : Mod //
     {
+        public static string Prefix { get; } = "YoguContentMod";
         public YoguContentMod()
         {
         }
