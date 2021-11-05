@@ -9,7 +9,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace YoguContentMod
+namespace YoguContentMod.Projectiles.Hostile
 {
     public class NiceProjectile : ModProjectile
     {
@@ -20,19 +20,19 @@ namespace YoguContentMod
 
         public override void SetDefaults()
         {
-            Projectile.width = 24;
-            Projectile.height = 28;
-            Projectile.alpha = 128;
-            Projectile.penetrate = -1;
-            Projectile.hostile = true;
-            Projectile.tileCollide = true;
-            Projectile.magic = true;
-            Projectile.ignoreWater = true;
+            projectile.width = 24;
+            projectile.height = 28;
+            projectile.alpha = 128;
+            projectile.penetrate = -1;
+            projectile.hostile = true;
+            projectile.tileCollide = true;
+            projectile.magic = true;
+            projectile.ignoreWater = true;
         }
 
         public override void AI()
         {
-            Projectile.rotation = Projectile.velocity.ToRotation();
+            projectile.rotation = projectile.velocity.ToRotation();
         }
     }
 }
