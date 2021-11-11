@@ -15,6 +15,7 @@ namespace YoguContentMod.Projectiles.Hostile
     {
         public override void SetStaticDefaults()
         {
+            base.SetStaticDefaults();
             DisplayName.SetDefault("Nice Projectile");            
         }
 
@@ -35,7 +36,7 @@ namespace YoguContentMod.Projectiles.Hostile
         {
             Player player = Main.LocalPlayer;
             projectile.rotation = projectile.velocity.ToRotation();
-            projectile.velocity = Vector2.Lerp(projectile.velocity, Vector2.Normalize(player.Center - projectile.Center) * 14f, 0.1f);
+            projectile.velocity = Vector2.Lerp(projectile.velocity, Vector2.Normalize(player.Center - projectile.Center) * 8f, 0.1f);
             projectile.velocity = Vector2.Normalize(player.Center - projectile.Center) * 8f;
             projectile.rotation += 0.4f * (float)projectile.direction;
         }

@@ -12,6 +12,7 @@ namespace YoguContentMod.Items.Weapons.Melee
 	{
 		public override void SetStaticDefaults()
 		{
+			base.SetStaticDefaults();
 			DisplayName.SetDefault("Skin Sword");
 			Tooltip.SetDefault("This is a skin made weapon, not very useful but kinda cursed");
 		}
