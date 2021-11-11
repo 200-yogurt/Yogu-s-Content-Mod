@@ -18,7 +18,7 @@ namespace YoguContentMod.Items.Weapons.Melee
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Sticky Sword");
-            Tooltip.SetDefault("Made with the technology of his people, rlly weird stuff \nShoots yogurt balls into enemies \nHas 20% chance to shoot 3 yogurt balls on a single click");
+            Tooltip.SetDefault("Made with the technology of his people, really weird stuff \nShoots yogurt balls into enemies \nHas 20% chance to shoot 3 yogurt balls on a single click");
         }
 
         public override void SetDefaults()

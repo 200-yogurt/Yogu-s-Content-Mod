@@ -1,5 +1,5 @@
 [c/920000:DISCLAIMER:] 
-[c/ff0a0a:Home page of the mod is the discord server, this disclaimer is incase you do not wish to join!] (forums coming soon)
+[c/ff0a0a:Home page of the mod is the discord server], [c/ff0a0a:this disclaimer is incase you do not wish to join] (forums coming soon)
 
 Welcome to [c/0049b4:Yogu's Content Mod!], a small project made by [c/009aff:Yogu the Yogurt], a general content mod for fun!
 [c/009a00:This mod adds:]

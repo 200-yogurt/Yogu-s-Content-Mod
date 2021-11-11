@@ -24,7 +24,6 @@ namespace YoguContentMod.Projectiles.Minions
 
         public override void SetDefaults()
         {
-            base.SetDefaults();
             projectile.netImportant = true;
 			projectile.width = 28;
 			projectile.height = 28;
