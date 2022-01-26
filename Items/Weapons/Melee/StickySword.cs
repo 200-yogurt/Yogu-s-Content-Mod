@@ -12,7 +12,7 @@ using YoguContentMod.Projectiles.Friendly;
 
 namespace YoguContentMod.Items.Weapons.Melee
 {
-    class StickySword : YItem
+    public class StickySword : YItem
     {
         public override void SetStaticDefaults()
         {
@@ -26,11 +26,11 @@ namespace YoguContentMod.Items.Weapons.Melee
             base.SetDefaults();
             item.damage = 28;
             item.melee = true;
-            item.width = 42;
-            item.height = 42;
+            item.width = 56;
+            item.height = 58;
             item.useTime = 15;
             item.useAnimation = 28;
-            item.useStyle = 1;
+            item.useStyle = ItemUseStyleID.SwingThrow;
             item.knockBack = 5;
             item.crit = 3;
             item.value = Item.sellPrice(silver: 20);

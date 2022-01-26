@@ -22,20 +22,23 @@ namespace YoguContentMod.Items.TreasureBags
             DisplayName.SetDefault("Yoqurt Bag");
             Tooltip.SetDefault("Right click to open");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.maxStack = 999;
             item.consumable = true;
+            item.expert = true;
+            item.maxStack = 999;
             item.width = 32;
             item.height = 50;
             item.rare = ItemRarityID.Green;
-            item.expert = true;
         }
+
         public override bool CanRightClick()
         {
             return true;
         }
+
         public override void OpenBossBag(Player player)
         {
             int choice = Main.rand.Next(7); 
@@ -60,7 +63,7 @@ namespace YoguContentMod.Items.TreasureBags
             {
                 player.QuickSpawnItem(ModContent.ItemType<KingYoqurtMask>());
             }
-            player.QuickSpawnItem(ModContent.ItemType<Yogurt>(), Main.rand.Next(5, 11)); // aqi sta bien
+            player.QuickSpawnItem(ModContent.ItemType<Yogurt>(), Main.rand.Next(5, 11)); 
 
         }
     }

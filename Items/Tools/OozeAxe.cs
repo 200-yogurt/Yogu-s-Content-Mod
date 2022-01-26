@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 
 namespace YoguContentMod.Items.Tools
 {
+    // TODO:
     public class OozeAxe : YItem
     {
         public override void SetDefaults()

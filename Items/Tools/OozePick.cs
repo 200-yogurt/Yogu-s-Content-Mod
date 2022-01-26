@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace YoguContentMod.Items.Tools
 {
+    // TODO:
     public class OozePick : YItem
     {
         public override void SetDefaults()

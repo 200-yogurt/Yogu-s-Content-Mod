@@ -11,11 +11,13 @@ namespace YoguContentMod.Buffs
     public abstract class SummonBuff : ModBuff
     {
         public abstract int ProjectileType { get; }
+
         public override void SetDefaults()
         {
             Main.buffNoSave[Type] = true;
             Main.buffNoTimeDisplay[Type] = true;
         }
+
         public override void Update(Player player, ref int buffIndex)
         {
             base.Update(player, ref buffIndex);

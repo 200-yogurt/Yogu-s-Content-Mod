@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -33,7 +34,6 @@ namespace YoguContentMod.Projectiles.Minions
 			projectile.penetrate = -1;
             projectile.tileCollide = false;
 			projectile.ignoreWater = true;
-            shootSpeed = 12f;
         }
     }
 }

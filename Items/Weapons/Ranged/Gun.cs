@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace YoguContentMod.Items.Weapons.Ranged
 {
+    // TODO:
     public abstract class Gun : YItem
     {
         public override void SetStaticDefaults()

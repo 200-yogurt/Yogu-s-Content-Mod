@@ -11,6 +11,7 @@ namespace YoguContentMod.Items.Materials
             DisplayName.SetDefault("Skin");
             Tooltip.SetDefault("An object dropped by those unfortunate \nUsed to make useless stuff and very cursed stuff");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();

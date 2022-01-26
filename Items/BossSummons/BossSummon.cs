@@ -17,8 +17,8 @@ namespace YoguContentMod.Items.BossSummons
 
         public override void SetStaticDefaults()
         {
-            ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
             base.SetStaticDefaults();
+            ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
         }
 
         public override void SetDefaults()

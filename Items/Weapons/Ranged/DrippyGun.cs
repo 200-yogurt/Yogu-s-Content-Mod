@@ -43,6 +43,7 @@ namespace YoguContentMod.Items.Weapons.Ranged
             return base.NewInstance(itemClone);
         }
 
+        // TODO: find a better way to do this
         public override bool CanUseItem(Player player)
         {
             doubleShoot = Main.rand.NextFloat(100) <= 15;

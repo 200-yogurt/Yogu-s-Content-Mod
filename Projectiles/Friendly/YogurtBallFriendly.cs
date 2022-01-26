@@ -24,14 +24,25 @@ namespace YoguContentMod.Projectiles.Friendly
             projectile.friendly = true;
             projectile.hostile = false;
             projectile.melee = true;
-            projectile.width = 52;
-            projectile.height = 38;
+            projectile.width = 20;
+            projectile.height = 20;
+        }
+
+        public override void Kill(int timeLeft)
+        {
+            int clouds = Main.rand.Next(1, 3);
+            for(int i = 0; i < clouds; i++)
+            {
+                Vector2 dir = (Main.rand.NextFloat(MathHelper.TwoPi * Main.rand.NextFloat(3, 8))).ToRotationVector2() * 4;
+                SpawnProjectile(projectile.Center, dir, ModContent.ProjectileType<YogurtBallCloud>());
+            }
         }
 
         public override void AI()
         {
             base.AI();
             projectile.rotation = projectile.velocity.ToRotation();
+            projectile.velocity.Y += 0.1f;
 
             if (projectile.frameCounter++ > 3)
             {

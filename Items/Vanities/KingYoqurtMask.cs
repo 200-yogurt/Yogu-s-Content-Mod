@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace YoguContentMod.Items.Vanities
 {
     [AutoloadEquip(EquipType.Head)]
-    class KingYoqurtMask : YItem
+    public class KingYoqurtMask : YItem
     {
         public override void SetStaticDefaults()
         {

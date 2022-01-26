@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace YoguContentMod.Items.Weapons.Magic
 {
+    // TODO:
     class SluggishStaff : ModItem
     {
     }

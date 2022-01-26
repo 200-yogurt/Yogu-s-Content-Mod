@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace YoguContentMod.NPCs
 {
+    // TODO: Move to component
     public interface IFallThroughPlatforms
     {
         bool CanFall { get; }

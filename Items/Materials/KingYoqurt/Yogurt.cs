@@ -13,10 +13,11 @@ namespace YoguContentMod.Items.Materials.KingYoqurt
     {
         public override void SetStaticDefaults()
         {
+            base.SetStaticDefaults();
             DisplayName.SetDefault("Yogurt");
             Tooltip.SetDefault("For some reason, yogurt is collected and stored inside their maximum kingdom leaders\nThese objects are very slippery and shiny, its used to make sluggish stuff with it");
-            base.SetStaticDefaults();
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();

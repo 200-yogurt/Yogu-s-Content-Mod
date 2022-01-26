@@ -13,10 +13,11 @@ namespace YoguContentMod.Items.Materials.KingYoqurt
     {
         public override void SetStaticDefaults()
         {
+            base.SetStaticDefaults();
             DisplayName.SetDefault("Mechanic Shard");
             Tooltip.SetDefault("These shards are dropped from his low quality screen projection, these are very shiny \nIf its made for something i asure you is going to be shiny");
-            base.SetStaticDefaults();
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();

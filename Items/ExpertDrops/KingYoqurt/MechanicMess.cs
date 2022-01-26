@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 
 namespace YoguContentMod.Items.ExpertDrops.KingYoqurt
 {
+    // TODO:
     class MechanicMess : YItem
     {
     }
